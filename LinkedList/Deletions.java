@@ -24,6 +24,9 @@ public class Deletions {
         if (root == null) {
             System.out.println("Linked list is empty!");
             return;
+        } else if (root.next == null) {
+            Node newRoot = root.next;
+            root = newRoot;
         } else {
             Node temp = root;
             while (temp.next.next != null) {
@@ -49,12 +52,10 @@ public class Deletions {
         if (root == null) {
             System.out.println("Linked list is empty!");
             return;
-        } 
-        else if(root.next == null){
+        } else if (root.next == null) {
             Node newRoot = root.next;
             root = newRoot;
-        }
-        else {
+        } else {
             int counter = 0;
             Node temp = root;
             while (temp.next.next != null && counter < index - 1) {
