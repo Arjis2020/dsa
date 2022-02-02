@@ -1,4 +1,4 @@
-package LinkedList;
+package SingleLL;
 
 class Insertions {
 
