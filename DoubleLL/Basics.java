@@ -26,10 +26,11 @@ public class Basics {
             return false;
         }
         Node temp = root;
-        while (temp.next != root) {
+        while (temp != null) {
             if (temp.data == data) {
                 return true;
             }
+            temp = temp.next;
         }
         return false;
     }
@@ -61,9 +62,10 @@ public class Basics {
         add(9);
         add(10);
 
-        System.out.println(find(5));
-        System.out.println(find(80));
-        System.out.println(find(8));
-        System.out.println(find(12));
+        System.out.println();
+        System.out.println("Finding : 5, Result : " + find(5));
+        System.out.println("Finding : 80, Result : " + find(80));
+        System.out.println("Finding : 8, Result : " + find(8));
+        System.out.println("Finding : 12, Result : " + find(12));
     }
 }
