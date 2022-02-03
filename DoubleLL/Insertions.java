@@ -1,6 +1,10 @@
 package DoubleLL;
 
-public class Insertions {
+public class Insertions extends Node {
+
+    Insertions(int data) {
+        super(data);
+    }
 
     static Node root;
 
@@ -8,7 +12,7 @@ public class Insertions {
         Node newNode = new Node(data);
         if (root == null) {
             root = newNode;
-            printList();
+            printList(root);
             return;
         }
         Node temp = root;
@@ -17,27 +21,27 @@ public class Insertions {
         }
         temp.next = newNode;
         newNode.prev = temp;
-        printList();
+        printList(root);
     }
 
     private static void insertBegin(int data) {
         Node newNode = new Node(data);
         if (root == null) {
             root = newNode;
-            printList();
+            printList(root);
             return;
         }
         root.prev = newNode;
         newNode.next = root;
         root = newNode;
-        printList();
+        printList(root);
     }
 
     private static void insertAt(int data, int index) {
         Node newNode = new Node(data);
         if (root == null) {
             root = newNode;
-            printList();
+            printList(root);
             return;
         }
         int counter = 0;
@@ -52,21 +56,7 @@ public class Insertions {
         if (next != null)
             temp.next.prev = newNode;
         temp.next = newNode;
-        printList();
-    }
-
-    private static void printList() {
-        System.out.println();
-        if (root == null) {
-            System.out.println("List is empty!");
-            return;
-        }
-        Node temp = root;
-        while (temp != null) {
-            System.out.print(temp.data + " -> ");
-            temp = temp.next;
-        }
-        System.out.print("NULL");
+        printList(root);
     }
 
     public static void main(String args[]) {

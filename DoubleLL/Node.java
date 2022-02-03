@@ -11,4 +11,18 @@ public class Node {
         next = null;
         prev = null;
     }
+
+    static void printList(Node root) {
+        System.out.println();
+        if (root == null) {
+            System.out.println("List is empty!");
+            return;
+        }
+        Node temp = root;
+        while (temp != null) {
+            System.out.print(temp.data + " <-> ");
+            temp = temp.next;
+        }
+        System.out.print("NULL");
+    }
 }

@@ -1,6 +1,10 @@
 package DoubleLL;
 
-public class Basics {
+public class Basics extends Node {
+
+    Basics(int data){
+        super(data);
+    }
 
     static Node root;
 
@@ -8,7 +12,7 @@ public class Basics {
         Node newNode = new Node(data);
         if (root == null) {
             root = newNode;
-            printList();
+            printList(root);
             return;
         }
         Node temp = root;
@@ -17,7 +21,7 @@ public class Basics {
         }
         newNode.prev = temp;
         temp.next = newNode;
-        printList();
+        printList(root);
     }
 
     private static boolean find(int data) {
@@ -33,20 +37,6 @@ public class Basics {
             temp = temp.next;
         }
         return false;
-    }
-
-    private static void printList() {
-        System.out.println();
-        if (root == null) {
-            System.out.println("List is empty!");
-            return;
-        }
-        Node temp = root;
-        while (temp != null) {
-            System.out.print(temp.data + " -> ");
-            temp = temp.next;
-        }
-        System.out.print("NULL");
     }
 
     public static void main(String args[]) {
