@@ -46,7 +46,7 @@ public class Basics {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.print(root.data);
+        System.out.print("NULL");
     }
 
     public static void main(String args[]) {
